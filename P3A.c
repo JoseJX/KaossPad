@@ -38,9 +38,6 @@ static bool P3A_Read_Chunk(FILE *f, P3A_Chunk_t *ch) {
 	if (!big_endian)
 		ch->header.size = SWAP32(ch->header.size);
 
-	// Print out the chunk size
-	printf("Chunk found: %c%c%c%c Size: %d\n", ch->header.tag[0], ch->header.tag[1], ch->header.tag[2], ch->header.tag[3], ch->header.size);
-
 	// Handle the case where the data is sized 0
 	if (ch->header.size == 0) {
 		ch->data = NULL;
@@ -150,6 +147,8 @@ void P3A_Write_Sample(P3A_t *p, uint32_t sample, char *fn) {
 	uint32_t i;
 	FILE *f = fopen(fn, "wb");
 	size_t result;
+
+	printf("Writing Sample %d to %s\n", sample, fn);
 
 	// Set up the header
 	uint32_t wave_hdr[11];

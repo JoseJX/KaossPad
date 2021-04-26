@@ -1,4 +1,4 @@
-This is a simple parser for the files that are produced by the Kaos Pad 3+.
+This is a simple parser for the files that are produced by the Kaoss Pad 3+.
 
 I needed to extract the audio stored in a slot from the data saved directly by
 the KP3+. Luckily it was pretty straight forward! The file extension for this
